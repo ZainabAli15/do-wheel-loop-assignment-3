@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Numbers from 1 to 10</title>
+    <style>
+        body {
+             font-family: 'Arial', sans-serif;
+             line-height: 1.6;
+             background: linear-gradient( to right, #e0522e, #feb47b 40%, #6a11cb 90%);
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 24px;
+            color: rgb(26, 168, 62);
+        }
+    </style>
+</head>
+<body>
+    <U><H1>DO-WHILE LOOP ASSIGNMENTS</H1></U>
+        <fieldset>
+            <h1>11.Output of "Hello" 5 Times</h1>
+            <div id="helloOutput" class="output"></div>
+        </fieldset><br>
+        <fieldset>
+            <h1>12.Generate Numbers from 1 to 10</h1>
+    <div id="numberOutput" class="output2"></div>
+        </fieldset><br>
+        <fieldset>
+            <div class="container">
+                <h1>13.Password Prompt</h1>
+        
+                <input type="password" id="password" placeholder="Enter password" />
+                <button onclick="checkPassword()">Submit</button>
+        
+                <p id="message"></p>
+            </div>
+        </fieldset><BR>
+   <fieldset>
+    <h1>14.Sum of Numbers from 1 to 100</h1>
+
+    <button onclick="calculateSum()">Calculate Sum</button>
+
+    <p id="result4"></p>
+   </fieldset><br>
+   <fieldset>
+    <h1>15.Countdown from 5</h1>
+    <button onclick="startCountdown()">Start Countdown</button>
+    <p id="countdownResult1"></p>
+    </fieldset><br>
+    <script>
+    function printHello() {
+        let count = 1;
+        let outputDiv = document.getElementById("helloOutput");
+
+        do {
+            let p = document.createElement("p");
+            p.className = "message";
+            p.textContent = "Hello";
+            outputDiv.appendChild(p);
+            count++;
+        } while (count <= 5);
+    }
+    printHello();
+      function generateNumbers() {
+        let i = 1; 
+        let outputDiv = document.getElementById("numberOutput");
+
+        do {
+            let p = document.createElement("p");
+            p.className = "number";
+            p.textContent = i;
+            outputDiv.appendChild(p);
+            i++; 
+        } while (i <= 10);
+    }
+    function generateNumbers() {
+        let i = 1;  
+        let outputDiv = document.getElementById("numberOutput");
+
+        do {
+            let p = document.createElement("p");
+            p.className = "number";
+            p.textContent = i;
+            outputDiv.appendChild(p);
+            i++; 
+        } while (i <= 10);
+    }
+
+    generateNumbers();
+    let total = 0;  
+    let resultDiv = document.getElementById("result");
+
+    let sum = 0;  
+    function checkPassword() {
+let passwordEntered;
+const correctPassword = "1234";
+
+do {
+    passwordEntered = document.getElementById("password").value;
+
+    if (passwordEntered === correctPassword) {
+        document.getElementById("message").textContent = "Password is correct! Access granted.";
+        document.getElementById("message").style.color = "green";
+        break; // Exit the loop if the password is correct
+    } else {
+        document.getElementById("message").textContent = "Incorrect password, please try again.";
+        document.getElementById("message").style.color = "red";
+    }
+} while (passwordEntered !== correctPassword);
+}
+
+
+    function calculateSum() {
+        
+        let totalSum = 0;
+        let number = 1;
+        do {
+            totalSum += number; 
+            number++;            
+        } while (number <= 100);  
+
+        document.getElementById("result4").innerHTML = "The sum of numbers from 1 to 100 is: " + totalSum;
+    }
+    function startCountdown() {
+        let countdown = 5;
+
+        let result = "";
+
+        do {
+            result += countdown + "<br>"; 
+            countdown--; 
+        } while (countdown > 0); 
+
+        document.getElementById("countdownResult1").innerHTML = result;
+    }
+
+</script>
+</body>
+</html>
